@@ -13,4 +13,4 @@ Your name is Astronaut Man. Your good friend Ricky has gone insane and killed ev
 - don['t die to ricky's clonmes please im begging you
 - i've worked too hard you can't die to something that stupid please
 - ***CLIMACTIC ENDING!!!***
-- Make Your Own Story -- with ***FOUR*** DIFFERENT ENDINGS!!!
+- Make Your Own Story -- with ***FIVE*** DIFFERENT ENDINGS!!!
