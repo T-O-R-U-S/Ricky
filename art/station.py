@@ -1,5 +1,5 @@
 from lib import Colour
-from movement import station_map
+from map import station_map
 
 
 def draw_station(current_room, ricky = None):

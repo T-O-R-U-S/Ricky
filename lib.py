@@ -3,6 +3,10 @@ from sys import stdout, stdin
 from os import system, name
 from enum import Enum
 
+# Python's stdlib has no function to clear the terminal,
+# so I have to call system() to clear the terminal manually --
+# but the command is different for every OS.
+clear_cmd = 'cls' if name == 'nt' else 'clear'
 
 # Stores constants for colours.
 class Colour(Enum):
@@ -52,17 +56,12 @@ def yes_or_no(to_print: str, colour=Colour.DEFAULT, delay: int = 0.02):
     return stdin.readline().lower().strip() == 'y'
 
 def clear():
-    # NT-based systems (a.k.a Windows)
-    if name == 'nt':
-        system('cls')
-    # POSIX systems
-    else:
-        system('clear')
+    system(clear_cmd)
 
 # For in-game animations
-def animate(animation: [str]):
+def animate(animation: [str], delay = 0.1):
     print(Colour.DEFAULT)
     for frame in animation:
         clear()
         print(frame)
-        sleep(0.5)
+        sleep(delay)

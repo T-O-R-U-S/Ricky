@@ -2,9 +2,9 @@ import lib
 import random
 
 from lib import *
-from movement import station_map
+from map import station_map
 from art.station import draw_station
-from art.animations import vent_animation, ricky_animation, move_animation
+from art.animations import vent_animation, ricky_animation, move_animation, clone_encounter
 
 def story():
     show("The year is 2078")
@@ -58,6 +58,8 @@ death_message = [
                  "and you just decide you're going to... die to a clone? What happened to my climactic ending? My hard work? "
                  "All this effort... where has it gone? Where has it gone? ANSWER ME. WHERE HAS IT GONE!?"]
 
+# These are the checks that need to happen every time you move a room.
+# These need to happen before and after a turn, before the loop repeats.
 def ricky_check():
     global ricky, hp, encountered_clones, deaths
     # Ricky encounter
@@ -88,6 +90,8 @@ def ricky_check():
 
     # Ricky clone encounter
     if ricky_clone is not None:
+        animate([clone_encounter[0]], delay=0.5)
+        animate(clone_encounter[1:] * ((hp//50)+2), delay=0.3)
         if not encountered_clones:
             show("You encounter one of Ricky's asexually-reproduced clones. Ricky has the ability to asexually "
                  "reproduce. His clones even have guns, just like him. This will not be explained. It attacks you, "
@@ -95,7 +99,7 @@ def ricky_check():
             encountered_clones = True
         else:
             show("You run into one of Ricky's clones. It attacks you, causing you to lose 75 HP. In your injured "
-                 f"state, you can only do {(hp//25) - 1} back-flips as you put the clone's life to an end.")
+                 f"state, you can only do {(hp//50) + 2} back-flips as you put the clone's life to an end.")
         hp -= 75
         ricky_clones[ricky_clone] = None
         show(f"You have {hp} hp left")
