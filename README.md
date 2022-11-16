@@ -10,7 +10,6 @@ Your name is Astronaut Man. Your good friend Ricky has gone insane and killed ev
 - *100% **Realistic** graphics featuring **animations***
 - Some colours :)
 - uhh??\. "):)
-- don['t die to ricky's clonmes please im begging you
-- i've worked too hard you can't die to something that stupid please
+- ***Do not die to Ricky's clones under any circumstances.***
 - ***CLIMACTIC ENDING!!!***
 - Make Your Own Story -- with ***FIVE*** DIFFERENT ENDINGS!!!
